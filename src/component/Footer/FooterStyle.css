@@ -4,6 +4,8 @@
     min-height: 100px;
     padding: 20px;
     color: white;
+    position: relative;
+    z-index: 27;
 }
 .footerSection p{
     text-align: center;

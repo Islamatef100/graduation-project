@@ -5,7 +5,7 @@ export default function AccordionSection() {
     return (
         <Container className='accordionStyle'>
             <Row className='d-flex justify-content-center'>
-                <Col sm='10' lg='8' className='text-center'>
+                <Col sm='10' lg='10' className='text-center'>
                     <Accordion defaultActiveKey="0">
                         <Accordion.Item eventKey="0">
                             <Accordion.Header>
