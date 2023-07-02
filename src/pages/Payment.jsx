@@ -9,8 +9,8 @@ export default function Payment({ notify }) {
   return (
     <>
       {user ? <SelectFees notify={notify} />: admin ?<> <h1 className='p-5 w-100 text-center' style={{
-            color:'red',marginTop:'100px'
-          }}>هذا المكان مخصص للسمتخدم العادي</h1> <Animation /> </> : <NotSignIn />}
+            color:'red',marginTop:'100px',height:'80vh'
+          }}>هذا المكان مخصص للسمتخدم العادي <Animation />  </h1>  </> : <NotSignIn />}
     </>
   )
 }
