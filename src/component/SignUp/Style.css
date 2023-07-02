@@ -1,0 +1,40 @@
+.body-color{
+    padding-top: 100px;
+    background-color: #eee;
+}
+.signupBox{
+  
+    background-color: white;
+    max-width: 80vw;
+    padding:2rem;
+    border-radius: 25px;
+}
+input{
+    display: block;
+    width: 90%;
+}
+.rowStyle{
+    margin: .5rem;
+}
+
+
+form button {
+    padding: .6rem;
+    background-color: teal;
+    border-radius: 999px;
+    margin: .5rem auto;
+    color: white;
+    margin-left: 2rem auto;
+    font-size: 1.5rem;
+}
+@media(max-width:700px)
+{
+    .signupBox{
+       width: 90vw;
+       margin: 0 5vw;
+    
+    }
+        form button{
+            width: 100%;
+        }
+}

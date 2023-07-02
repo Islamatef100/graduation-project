@@ -1,0 +1,283 @@
+.Slider{
+    background-image: url(../../../images/backInfoProfile.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 91px;
+}
+.Slider-item{
+    color: white;
+}
+.Slider-text{
+    display: flex;
+    min-height: 30rem;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+.body-color{
+background-color: #eee;
+}
+.card-style{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 400px;
+}
+.card-style:hover{
+    cursor: pointer;
+    transform: translate3d(0, -5px,0);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .2);
+}
+.cars-sections{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.car-data{
+    display: flex;
+    justify-content: space-between;
+}
+
+.NotSignIn{
+    background-color: white;
+    width: 20rem;
+    border-radius: 20px;
+    padding: 2rem;
+    height: fit-content;
+    width: 400px;
+}
+
+.min-title{
+    color: teal;
+    width: 12rem;
+    text-align: center;
+    font-size:3rem;
+    /* border-bottom: 2px teal solid; */
+}
+.title-shape-circle{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid teal;
+    position: relative;
+}
+.circle1::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 20vw;
+    height: 2px;
+    background-color: teal;
+    transform: translate(4%,200%);
+}
+.circle2::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 20vw;
+    height: 2px;
+    background-color: teal;
+    transform: translate(-4%,200%);
+}
+.all-title{
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+.allServiceSection{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+}
+.service{
+    position: relative;
+    background-color: white;
+    width: 300px;
+    height: 250px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .2);
+    color: black;
+    margin: 2rem;
+}
+.service:hover{
+    cursor: pointer;
+}
+.service-title{
+    border-top:1px solid gray;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.addUserSection{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: .8;
+}
+.formAddCar{
+    background-color: white;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 30px;
+    position: relative;
+    opacity: 1;
+}
+.formAddCar  input{
+    padding: 3px;
+    border-radius: 10px
+}
+.formAddCar label{
+    margin: 3px;
+}
+.formAddCar h2{
+    text-align: center;
+}
+.formAddCar h1{
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: teal;
+    /* border: 3px solid teal; */
+}
+.formAddCar h1:hover{
+    cursor: pointer;
+    color: red;
+    border: 4px solid red;
+}
+.NewcarIcon{
+    margin: 0 auto;
+    padding: 20px;
+    animation: carAnimation 1.5s infinite linear;
+    position: relative;
+    transform: rotatey(180deg);
+}
+@keyframes carAnimation{
+    0%{
+        right: -100px;
+    }
+    50%{
+        right:0;
+    }
+    100%{
+        right:100px
+    }
+
+}
+
+
+.stolen_car_section{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 21;
+    background-color: black;
+    opacity: .8;
+    display: flex;
+    justify-content: center;
+}
+.StolendDetails{
+    border-radius: 30px;
+    background-color: white;
+    width: 500px;
+    height: 600px;
+    position: absolute;
+    top: 200px;
+    z-index: 22;
+
+}
+.StolendDetails h1{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: 2%;
+    right: 2%;
+    color: teal;
+    border-radius: 50%;
+    text-align: center;
+}.StolendDetails h1:hover{
+    cursor: pointer;
+    color:red;
+    border: 2px solid red;
+}
+.StolendDetails p{
+    width: 80%;
+    font-size: 1.5rem;
+    color: black;
+    line-height: 2.5rem;
+}
+.firstOut_StolnCar{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20%;
+}
+.stolen_car_section form{
+    width: 80%;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.btn-stolenCar-form{
+    width: 170px;
+    padding: 10px;
+}
+.firstOut_StolnCar input{
+    border-radius: 10px;
+}
+@media (max-width:700px){
+    .cars-sections{
+        flex-direction: column;
+        align-items: center;
+    }
+    .card-style {
+             width: 80vw;
+             margin: 0 10vw;
+         }
+    .NotSignIn{
+        width: 70vw;
+        margin: 0 15vw;
+    }
+    .NotSignIn-buttons{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .formAddCar{
+        width: 90vw;
+        margin: 0 5vw;
+    }
+    .addUserSection{
+        align-items: center;
+        margin-top: 40px;
+    } 
+    .StolendDetails{
+        max-height: 400px;
+        width: 80vw;
+        margin: 0 10vw;
+    }
+    .firstOut_StolnCar{
+        margin-top: 2%;
+        font-size: 1.2rem;
+    }
+}

@@ -1,0 +1,29 @@
+.All-Card{
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px;
+    min-width: 300px;
+    max-width: 80vw;
+    position: relative;
+}
+.SectionAllUserData{
+    min-height: 100vh;
+}
+.user-number{
+    width: 60px;
+    height: 60px;
+    color: teal;
+    font-size: 2.5rem;
+    border-radius: 50%;
+    text-align: center;
+    position: absolute;
+    left: 1%;
+    top: 2%;
+
+}
+.number{
+    position: absolute;
+    top: 2%;
+    left: 1%;
+}

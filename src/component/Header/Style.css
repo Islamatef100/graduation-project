@@ -1,0 +1,53 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    align-items: center;
+}
+.Allhead{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+.navebar{
+    display: flex;
+}
+.header a{
+    padding-left: 1.6rem;
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: white;
+    font-size: 1.4rem;
+}
+.header a:hover{
+    color:rgb(5, 5, 62);
+}
+.Allhead{
+    background-color: teal;
+}
+.logo-style{
+    width: 100px;
+    height: 60px;
+}
+.ProfileIcon{
+    font-size: 2rem;
+    color:white;
+    cursor:pointer;
+    padding-right:3rem   
+}
+.switchInMobilemenue{
+display: none;
+}
+@media (max-width:767px){
+.switchInMobile {
+        display: none;
+    }
+    .switchInMobilemenue{
+        display: block;
+    }
+    .ProfileIcon{
+        padding-right: 0;
+    }
+}

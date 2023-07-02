@@ -1,0 +1,100 @@
+.body-colorRP {
+    min-height: 90vh;
+    background-color: #eee;
+    padding-top: 100px;
+}
+
+.signinboxRP {
+    max-width: 400px;
+    min-width: 300px;
+    min-height: 200px;
+    border-radius: 25px;
+    overflow: hidden;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.formStyleRP {
+
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+}
+
+form input {
+    padding: .4rem;
+    margin: .5rem;
+    border-radius: 999px;
+    outline: none;
+
+}
+
+.btnRP {
+    font-size: 1.2rem;
+    padding: .3rem;
+    background-color: teal;
+    border-radius: 10px;
+    width: 50%;
+    margin: 1rem auto 1rem auto;
+    color: white
+}
+
+.body-colorRP a {
+    text-decoration: none;
+}
+
+form a {
+    display: flex;
+    justify-content: end;
+}
+.validationSection{
+    width:100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.validationSection form{
+    width: 400px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    margin-top:1rem;
+    border-radius: 30px;
+}
+.validationSection form label{
+    text-align: center;
+    font-size: 1.7rem;
+}
+.validCode{
+    border: 0;
+    width: 80%; 
+    padding: 10px;
+    border-radius: 10px;
+    /* padding: .4rem;
+    margin: .5rem; */
+    margin-top: 1rem;
+    background-color: #eee;
+}
+.validationSection form button{
+    padding: 0;
+    width: 200px;
+    padding: 10px;
+    margin-top: 1rem;
+}
+.formLabel{
+    margin-top: 8rem;
+}
+.inputedigit{
+    width: 40px;
+    border: 0;
+    background-color: #eee;
+    margin-top: 1rem;
+    border-radius: 4px;
+}

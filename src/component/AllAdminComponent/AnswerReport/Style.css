@@ -1,0 +1,82 @@
+.AllAnserReport{
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.AllCard{
+    width: 40vw;
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    position: relative;
+    margin: 20px 0;
+
+}
+.section-data{
+display: flex;
+border-bottom: 1px solid #eee;
+
+justify-content: space-between;
+}
+.item{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+   
+}
+.section-btns{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.Twobtn{
+    width: 200px;
+    min-width: 100px;
+    padding: 10px;
+}
+
+.number{
+    font-size: 2rem; 
+    color:teal;
+    position: absolute;
+    top: 4%;
+    left: 2%;
+}
+@media (max-width:1250px) {
+    .AllCard {
+        width: 50vw;
+    }
+
+    .Twobtn {
+        width: 150px;
+    }
+   
+}
+@media (max-width:900px){
+    .AllCard{
+        width: 60vw;
+    }
+        .Twobtn {
+            width: 150px;
+        }
+    }
+@media (max-width:770px) {
+    .AllCard {
+        width: 80vw;
+    }
+    .Twobtn{
+        width: 100px;
+    }
+    .section-data{
+        flex-direction: column;
+    }
+    .item{
+        width: 100%;
+    }
+
+}

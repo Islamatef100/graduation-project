@@ -1,0 +1,113 @@
+
+.color-body {
+   min-height: 100vh;
+    background-color: #f8f8f8;
+}
+
+.font {
+    font-family: Almarai, sans-serif;
+    font-family: Cairo, sans-serif;
+    font-size: 20px;
+}
+
+.rectangle {
+    min-height: 600px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    padding: 0  0 40px 0  ;
+    box-shadow: 1px 4px 4px 1px rgb(85, 85, 85, .25);
+}
+
+.dats-count {
+    color: #555555;
+
+}
+
+.btn-style {
+    width: 280px;
+    border-radius: 8px;
+    color: white;
+    background-color: #224f61;
+}
+
+.table-style td{
+border: black solid 1px;
+/* padding: 10px 20px; */
+width: 7%;
+text-align: center;
+}
+.btn-deploy{
+    width: 100%;
+    height: 100%;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.table-style tr{
+    width: 100%;
+}
+@media (max-width:700px){
+    .btn-style{
+        width: 130px
+    }
+    .table-style td{
+         font-size: 15px;
+    }
+
+}
+table thead{
+    background-color: teal;
+}
+table tbody tr:hover{
+    /* background-color: #eee; */
+    cursor: pointer;
+}
+table thead td{
+    padding: 17px;
+}
+.selecteRow{
+    background-color: #fff3f3;
+}
+.ShowImage{
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .9;
+}
+.car{
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        z-index: 10;
+        transform: translate(-50%,-50%);
+        opacity: 2;
+}
+.car img{
+    width: 100%;
+    height: 100%;
+}
+.btns-img{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+.btn-img{
+    min-width: 8rem;
+    padding: .5rem;
+}
+
+/* @media (max-width:700px){
+    .mobile-view{
+        transform: rotatey(0deg);
+    }
+} */
+.transaction_notFound{
+        width: 400px;
+        position:absolute;
+        top: 50%;
+        right: 50%;
+        transform: translatex(50%);
+        color: red;
+}

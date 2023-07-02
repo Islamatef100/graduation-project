@@ -1,0 +1,49 @@
+video{
+    position: relative;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    z-index: -10;
+    overflow: hidden;
+    margin-top: 93px;
+}
+.VdStyle{
+    width: 100vw;
+    height: 100vh;
+}
+.accordionStyle{
+    margin: 100px 0 ;
+    font-size: 1.4rem;
+}
+.fon{
+    font-size: 1.4rem;
+    min-width: 20vw;
+}
+.poularQueston{
+    text-align: center;
+    padding-top: 200px;
+    width: fit-content;
+    border-bottom: 3px solid teal;
+}
+@media (max-width:1330px) {
+    .VdStyle {
+        width: 100vw;
+        height: 40vh;
+        margin: 0;
+    }
+    .poularQueston {
+        padding-top: 400px;
+    }
+}
+@media (max-width:770px){
+    .VdStyle{
+        width: 100vw;
+        height: 40vh;
+        margin: 0;
+    }
+    .poularQueston{
+        padding-top: 50px;
+    }
+}

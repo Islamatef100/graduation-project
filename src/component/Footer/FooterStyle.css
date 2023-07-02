@@ -1,0 +1,47 @@
+.footer{
+    width: 100vw;
+    background-color: teal;
+    min-height: 100px;
+    padding: 20px;
+    color: white;
+}
+.footerSection p{
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+.footerSection{
+    display:flex;
+    justify-content:space-between; 
+    align-items:center;
+    flex-wrap: wrap;
+}
+.icon{
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+    
+}
+.icon:hover{
+   color: red;
+}
+.footerSection .icons{
+    min-width: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.charFooter{
+    color: red;
+    font-size: 2rem;
+}
+.logo{
+    font-size: 1.5rem;
+}
+.logo:hover{
+    color:red
+}
+.fcai{
+    text-decoration: none;
+}

@@ -1,0 +1,59 @@
+.AnimationStyle{
+    width: 40vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    overflow: hidden;
+}
+.NewAnimation {
+    padding: 0 20px;
+    animation: carAnimation 1.8s infinite linear;
+    transform: rotatey(180deg);
+    position: relative;
+}
+.iconAnimation{
+    width: 35vw;
+    overflow: hidden;
+}
+.camira{
+    color: blue;
+    animation: camiraAnimation infinite 1.8s;
+}
+@keyframes camiraAnimation {
+    0%,90%{
+        color: blue;
+    }
+    100%{
+        color: red;
+    }
+}
+@keyframes carAnimation {
+    /* 0% {
+        margin-left:450px;
+    }
+    50%{
+        margin-left: 220px;
+    }
+    100% {
+        margin-left: 50px;
+    } */
+    0%{
+        right: 0;
+    }
+    50%{
+        right: 50%;
+    }
+    100%{
+        right: 100%;
+    }
+}
+@media (max-width:700px){
+    .AnimationStyle{
+        width: 70vw;
+        margin: 0 15vw;
+    }
+    .iconAnimation{
+        width: 65vw;
+    }
+}
