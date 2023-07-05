@@ -16,6 +16,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useEffect, useContext } from 'react';
 import Footer from './component/Footer/Footer';
+import HistoryPage from './pages/History';
 import { SignInUserInfo } from './component/CenterData/UseContextData';
 function App() {
  // i try to restore user.
@@ -75,6 +76,7 @@ function App() {
           <Route path='/SignIn/ResetPassword/ConfirmPassword' element={<Configration fun={notify} />} />
           <Route path='/SignIn/ResetPassword/ValidCode' element={<ValidCode />} />
           <Route path='/Profile' element={<ProfilePage />} />
+          <Route path='/history' element={<HistoryPage />} />
           <Route path='*' element={<Error/>} /> 
         </Routes>
         <Footer />

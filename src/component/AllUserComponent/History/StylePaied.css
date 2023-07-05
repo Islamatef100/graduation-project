@@ -83,10 +83,6 @@ table thead td{
         z-index: 10;
         transform: translate(-50%,-50%);
         opacity: 2;
-        background-color: black;
-        padding: 30px;
-        border-radius: 20px;
-        color: white;
 }
 .car img{
     width: 100%;
@@ -114,4 +110,8 @@ table thead td{
         right: 50%;
         transform: translatex(50%);
         color: red;
+}
+
+.PayedSector{
+    padding: 13px;
 }

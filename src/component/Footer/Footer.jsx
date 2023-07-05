@@ -8,7 +8,7 @@ export default function Footer() {
     return (
         <div className='footer'>
             <div className='container footerSection'>
-                <Link to={'/home'} style={{ color: 'white', textDecoration: 'none' }}><p className='logo'> <span className='charFooter'>F</span>ast<span className='charFooter'>R</span>oad</p></Link> 
+                <Link to={'/home'} style={{ color: 'white', textDecoration: 'none' }}><p className='logo'> <span className='charFooter'>F</span>ast<span className='charFooter'>P</span>ass</p></Link> 
                 <p className='icons'>
                     <a href='https://github.com/Islamatef100/graduation-project' target='_blank'>< AiFillGithub className='icon' /></a> 
                     <a href='https://www.linkedin.com/in/islam-atef-0b64a91a7/' target='_blank'>< FaLinkedinIn className='icon'/></a> 

@@ -10,6 +10,7 @@ export default function SelectFees({ notify }) {
   const { user_ssn, token } = useContext(SignInUserInfo)
   const [img_path, setImg_path] = useState('')
   const [trans_ID, set_Transaction_Id] = useState(null)
+  const [time,setTime] = useState(null)
   useEffect(() => { 
      try {
        const getAllTransactions = async () => {
@@ -62,13 +63,14 @@ export default function SelectFees({ notify }) {
       console.log('can not get payment link from API')
     }
   }
-  const Seeimage = async (img_name, id) => {  
+  const Seeimage = async (img_name, id,theTime) => {  
 
     console.log('img name is: ', img_name)
     await setImg_path(`/Users/mac/final/uploads/transactions/${img_name}`)
     await set_Transaction_Id(id)
     //console.log('all path of image is:', img_path)
     SetShowImage(true)
+    setTime(theTime)
   }
 return (
     <div className='font color-body'>
@@ -78,6 +80,7 @@ return (
       UserSSN={user_ssn}
       TransID={trans_ID}
       notify={notify}
+      transactionTime = {time}
       theToken={token} /> : null}
         <Container >
           <Row className='justify-content-center mt-5'>
@@ -122,7 +125,7 @@ return (
                               {/* <td>الغزامه</td> */}
                               <td>
                                 <Button
-                                  style={{ backgroundColor: '#034646' }} className="btn-style btn-deploy py-3" onClick={() => Seeimage(element.vehicle_image, element.transaction_id)} >
+                                  style={{ backgroundColor: '#034646' }} className="btn-style btn-deploy py-3" onClick={() => Seeimage(element.vehicle_image, element.transaction_id,element.adjustment_time)} >
                                   تفاصيل اكثر
                                 </Button>
                               </td>

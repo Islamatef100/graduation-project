@@ -34,6 +34,7 @@ export default function Header() {
             <NavDropdown.Item> <NavLink to={'/SignUp'} className='switchInMobilemenue'>انشاء حساب</NavLink></NavDropdown.Item> 
           
             <NavDropdown.Item ><NavLink to={'/Payment'} >الدفع</NavLink></NavDropdown.Item>
+            <NavDropdown.Item ><NavLink to={'/history'} >جميع المدفوعات</NavLink></NavDropdown.Item>
             <NavDropdown.Item> <NavLink to={'/ContactUs'}>التواصل معنا</NavLink></NavDropdown.Item> 
           
             {/* here do logic of sign out. */}
