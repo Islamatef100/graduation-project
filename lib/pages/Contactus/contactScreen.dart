@@ -19,8 +19,7 @@ class ContactScreen extends StatelessWidget {
         child: Form(
           key: _formfield,
           child: Column(children: [
-            Image.asset(
-              'assets/logo.png',
+            Image.asset('assets/Contact-Us.jpg',
               width: 250,
               height: 250,
             ),

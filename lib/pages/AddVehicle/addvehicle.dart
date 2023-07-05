@@ -62,7 +62,7 @@ class _AddVehicleScreenState extends State<AddVehicleScreen> {
             'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJfc3NuIjoiMzAxMTAzMDIzMDAxMTMiLCJ1c2VyX25hbWUiOiJnZW9yZ2UiLCJtYW51ZmFjdHVyZXJfbnVtYmVyIjoiMSIsInVzZXJfZW1haWwiOiJnZW9yZ2VAYWRtaW4uY29tIiwidXNlcl9wYXNzd29yZCI6IiQyYiQxMCRROUdWOWx1MjhIcS40cEplREE3S2MuZ09SRnJxZXVTNXFmR2dRZVUzZU9ETXZ1N1RuVFVnNiIsInVzZXJfYWRkcmVzcyI6ImZheW91bSIsInVzZXJfam9iIjoic3R1ZGVudCIsInVzZXJfbmF0aW9uYWxpdHkiOiJFZ3lwdGlhbiIsInVzZXJfcGhvbmUiOiIwMTAyNzgyNzY1NCIsInVzZXJfYmQiOiIzMC0xMC0yMDAxIiwidXNlcl9nb3Zlcm5vcmF0ZSI6ImZheW91bSIsImlzX2FkbWluIjoiYWRtaW4ifSwiaWF0IjoxNjg0MzM5NzE2fQ.7rkN0SIW_7RRDF-dVk1FjL4JZNeTHtuKdS1kCdU7bjI'
       };
       var request = http.MultipartRequest(
-          'POST', Uri.parse('http://192.168.1.9:4242/vehicles'));
+          'POST', Uri.parse('http://10.0.2.2:4242/vehicles'));
       request.fields.addAll({
         'vehicle_id': vId,
         'license_id': licenceId,
@@ -117,13 +117,12 @@ class _AddVehicleScreenState extends State<AddVehicleScreen> {
               child: Form(
                 key: addVehicleformfield,
                 child: Column(children: [
-                  Image.asset(
-                    'assets/logo.png',
+                  Image.asset('assets/car.png',
                     width: 250,
                     height: 250,
                   ),
                   Text(
-                    "Enter your Car Details",
+                    "Enter Car Details",
                     style: TextStyle(
                       fontSize: 40,
                       fontWeight: FontWeight.bold,

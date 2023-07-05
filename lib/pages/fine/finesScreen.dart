@@ -108,28 +108,28 @@ Widget buildTrasactionsItem(Transactions ttmodel, context) => Padding(
       child: Container(
         margin: EdgeInsets.symmetric(vertical: 5),
         padding: EdgeInsets.only(right: 10),
-        height: 130,
+        height: 200,
         width: 350,
         decoration: BoxDecoration(
           color: Color(0xffF5D7DB),
           borderRadius: BorderRadius.circular(10),
         ),
         child: Row(children: [
-          Container(
-            height: 100,
-            width: 90,
-            margin: EdgeInsets.only(left: 8),
-            padding: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: Color(0xffd4ecf7),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Image.asset(
-              "assets/car.png",
-              height: 150,
-              width: double.infinity,
-            ),
-          ),
+          // Container(
+          //   height: 150,
+          //   width: 90,
+          //   margin: EdgeInsets.only(left: 8),
+          //   padding: EdgeInsets.all(10),
+          //   decoration: BoxDecoration(
+          //     color: Color(0xffd4ecf7),
+          //     borderRadius: BorderRadius.circular(10),
+          //   ), 
+          //   child: Image.asset('assets/plates/'+ttmodel.vehicleImage,
+          //     height: 150,
+          //     width: double.infinity,
+          //     //width: 150, 
+          //   ),
+          // ),
           Container(
             child: Padding(
               padding: EdgeInsets.only(left: 15, top: 20, bottom: 25),
@@ -140,7 +140,7 @@ Widget buildTrasactionsItem(Transactions ttmodel, context) => Padding(
                   Row(
                     children: [
                       Text(
-                        ttmodel.transactionId.toString(),
+                        "Transaction ID: ",
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 18,
@@ -150,6 +150,37 @@ Widget buildTrasactionsItem(Transactions ttmodel, context) => Padding(
                       SizedBox(
                         width: 5,
                       ),
+                      Text(
+                        ttmodel.transactionId.toString(),
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 3, 52, 247),
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      // Text(
+                      //   "Location: ",
+                      //   style: TextStyle(
+                      //     color: Colors.black,
+                      //     fontSize: 18,
+                      //     fontWeight: FontWeight.bold,
+                      //   ),
+                      // ),
+                      // SizedBox(
+                      //   width: 5,
+                      // ),
+                      // Text(
+                      //   ttmodel.place,
+                      //   style: TextStyle(
+                      //     color: Colors.black,
+                      //     fontSize: 18,
+                      //     fontWeight: FontWeight.bold,
+                      //   ),
+                      // ),
+                    ],
+                  ),
+                  Row(
+                    children: [
                       Text(
                         "Location: ",
                         style: TextStyle(
@@ -165,8 +196,7 @@ Widget buildTrasactionsItem(Transactions ttmodel, context) => Padding(
                         ttmodel.place,
                         style: TextStyle(
                           color: Colors.black,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
                         ),
                       ),
                     ],
@@ -215,7 +245,29 @@ Widget buildTrasactionsItem(Transactions ttmodel, context) => Padding(
                       ),
                     ],
                   ),
-                ],
+                  Row(
+                    children: [
+                      Text(
+                        "Licnese: ",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Text(
+                        ttmodel.vehicle,
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ],
+                  ),
+                  ],
               ),
             ),
           ),

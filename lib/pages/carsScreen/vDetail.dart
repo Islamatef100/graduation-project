@@ -32,7 +32,7 @@ class VDetail extends StatelessWidget {
             children: [
               CircleAvatar(
                 radius: 70,
-                backgroundImage: AssetImage('assets/logo.png'),
+                backgroundImage: AssetImage('assets/cars/'+vv.vehicleImage),
               ),
               SizedBox(
                 height: 30,
@@ -80,7 +80,7 @@ class VDetail extends StatelessWidget {
                   onPressed: () {
                     DioHelper.patchData(
                       url:
-                          'http://192.168.1.3:4242/vehicles/$ssn/${vv.vehicleId}/stolen',
+                          'http://10.0.2.2:4242/vehicles/$ssn/${vv.vehicleId}/stolen',
                     ).then((value) {
                       print("${vv.vehicleId}is stolen");
                     }).catchError((error) {
@@ -89,7 +89,7 @@ class VDetail extends StatelessWidget {
                     // CarCubit.get(context).getCars();
                     //     DioHelper.getData(
                     //   url:
-                    //       'http://192.168.1.9:4242/transactions/$ssn/checkout-session/${widget.tt.transactionId}',
+                    //       'http://10.0.2.2:4242/transactions/$ssn/checkout-session/${widget.tt.transactionId}',
                     // ).then((value) {
                     //   session_url = value.data['url'];
                     //   navigateTo(context, PaymentWebWiew(session_url));

@@ -15,7 +15,7 @@ class FineCubit extends Cubit<FinesStates> {
 
   void getTransactions() {
     DioHelper.getData(
-      url: 'http://192.168.1.3:4242/transactions/$ssn/user/notpaid',
+      url: 'http://10.0.2.2:4242/transactions/$ssn/user/notpaid',
       token: token,
     ).then((value) {
       finemodel = TransactionsModel.fromJson(value.data);

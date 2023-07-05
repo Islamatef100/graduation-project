@@ -125,8 +125,7 @@ Widget buildTrasactionsItem(Transactions ttmodel, context) => Padding(
               color: Color(0xffd4ecf7),
               borderRadius: BorderRadius.circular(10),
             ),
-            child: Image.asset(
-              "assets/car.png",
+            child: Image.asset("assets/cars/"+ttmodel.vehicleImage,
               height: 150,
               width: double.infinity,
             ),
@@ -311,19 +310,20 @@ Widget buildVehicleItem(Vehicles vmodel, context) => Padding(
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
-                              fontSize: 20),
+                              fontSize: 20
+                              ),
                         ),
                       ],
                     ),
                     Row(
                       children: [
                         SizedBox(
-                          width: 40,
+                          width: 50,
                         ),
                         Text(
-                          vmodel.license,
+                          vmodel.vehicleId,
                           style: TextStyle(
-                              fontSize: 25,
+                              fontSize: 40,
                               color: Colors.white,
                               fontWeight: FontWeight.bold),
                         ),

@@ -66,7 +66,7 @@ class LayoutCubit extends Cubit<LayoutStates> {
   }) {
     //emit(CartaLoginLoadingState());
     DioHelper.postData(
-      url: 'http://192.168.1.9:4242/vehicles',
+      url: 'http://10.0.2.2:4242/vehicles',
       data: {
         'vehicle_id': vIdcontroller,
         'license_id': licenceIdcontroller,
@@ -93,7 +93,7 @@ class LayoutCubit extends Cubit<LayoutStates> {
 
   // void getvehicles() {
   //   DioHelper.getData(
-  //     url: 'http://192.168.1.3:4242/vehicles',
+  //     url: 'http://10.0.2.2:4242/vehicles',
   //     token: token,
   //   ).then((value) {
   //     vehiclesmodel = VehiclesModel.fromJson(value.data);
@@ -108,7 +108,7 @@ class LayoutCubit extends Cubit<LayoutStates> {
 
   // void getTransactions() {
   //   DioHelper.getData(
-  //     url: 'http://192.168.1.3:4242/transactions',
+  //     url: 'http://10.0.2.2:4242/transactions',
   //     token: token,
   //   ).then((value) {
   //     transactionsmodel = TransactionsModel.fromJson(value.data);

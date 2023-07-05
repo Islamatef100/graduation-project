@@ -14,7 +14,7 @@ class CarCubit extends Cubit<CarStates> {
   late VehiclesModel vehiclemodel;
   void getCars() {
     DioHelper.getData(
-      url: 'http://192.168.1.3:4242/vehicles/$ssn',
+      url: 'http://10.0.2.2:4242/vehicles/$ssn',
       token: token,
     ).then((value) {
       vehiclemodel = VehiclesModel.fromJson(value.data);

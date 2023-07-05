@@ -55,15 +55,23 @@ class _tDetailState extends State<tDetail> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              CircleAvatar(
-                radius: 70,
-                backgroundImage: AssetImage('assets/logo.png'),
+              // ClipRRect(
+              //   // radius: 70,  CircleAvatar
+              //   backgroundImage: AssetImage('assets/plates/'+widget.tt.vehicleImage),
+              // ),
+              ClipRRect(
+                // borderRadius: BorderRadius.circular(8.0), // Set the border radius to achieve rounded corners
+                  child: Image.asset('assets/plates/' + widget.tt.vehicleImage,
+                  height: 150,
+                  width: double.infinity,
+                ),
               ),
               SizedBox(
-                height: 30,
+                height: 50,
+                width: 150,
               ),
               itemProfile(
-                  'Car License Plate Numbers',
+                  'Transaction ID',
                   widget.tt.transactionId.toString(),
                   CupertinoIcons.car_detailed),
               SizedBox(
@@ -74,27 +82,27 @@ class _tDetailState extends State<tDetail> {
               SizedBox(
                 height: 30,
               ),
-              itemProfile('Creation Date', widget.tt.fine.toString(),
+              itemProfile('Fine', widget.tt.fine.toString(),
                   CupertinoIcons.car_detailed),
               SizedBox(
                 height: 30,
               ),
-              itemProfile('Expire Date', widget.tt.paymentStatus,
+              itemProfile('Payment State', widget.tt.paymentStatus,
                   CupertinoIcons.car_detailed),
               SizedBox(
                 height: 30,
               ),
               itemProfile(
-                  'Manufacturer', widget.tt.place, CupertinoIcons.car_detailed),
+                  'Place', widget.tt.place, CupertinoIcons.car_detailed),
               SizedBox(
                 height: 30,
               ),
-              itemProfile('Model', widget.tt.adjustmentDate,
+              itemProfile('Day', widget.tt.adjustmentDate,
                   CupertinoIcons.car_detailed),
               SizedBox(
                 height: 30,
               ),
-              itemProfile('Color', widget.tt.adjustmentTime,
+              itemProfile('Time', widget.tt.adjustmentTime,
                   CupertinoIcons.car_detailed),
               SizedBox(
                 height: 30,
@@ -109,8 +117,8 @@ class _tDetailState extends State<tDetail> {
                     // print(${widget.tt.transactionId});
                     DioHelper.getData(
                       url:
-                          'http://192.168.1.3:4242/transactions/$ssn/checkout-session/${widget.tt.transactionId}',
-                      //      localhost:4242/transactions/30012012300977/checkout-session/102
+                          'http://10.0.2.2:4242/transactions/$ssn/checkout-session/${widget.tt.transactionId}',
+                      //      10.0.2.2:4242/transactions/30012012300977/checkout-session/102
                     ).then((value) {
                       session_url = value.data['url'];
                       navigateTo(context, PaymentWebWiew(session_url));

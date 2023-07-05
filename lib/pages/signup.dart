@@ -61,7 +61,7 @@ class _SignupScreenState extends State<SignupScreen> {
     ) async {
       var headers = {'Content-Type': 'application/json'};
       var request =
-          http.Request('POST', Uri.parse('http://192.168.1.3:4242/users/'));
+          http.Request('POST', Uri.parse('http://10.0.2.2:4242/users/'));
       request.body = json.encode({
         "user_name": userName,
         "user_ssn": userssn,

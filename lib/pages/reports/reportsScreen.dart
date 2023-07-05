@@ -143,12 +143,12 @@ Widget buildStolenVehicle(SVehicles svmodel, context) => Padding(
                     Row(
                       children: [
                         SizedBox(
-                          width: 40,
+                          width: 50,
                         ),
                         Text(
-                          svmodel.license,
+                          svmodel.vehicleId,
                           style: TextStyle(
-                              fontSize: 25,
+                              fontSize: 40,
                               color: Colors.white,
                               fontWeight: FontWeight.bold),
                         ),

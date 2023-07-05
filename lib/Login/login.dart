@@ -87,8 +87,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   key: _formfield,
                   child: Column(children: [
                     // Text(token.toString()),
-                    Image.asset(
-                      'assets/logo.png',
+                    Image.asset('assets/logo.png',
                       width: 250,
                       height: 250,
                     ),

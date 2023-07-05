@@ -22,11 +22,15 @@ class HomeScreen extends StatelessWidget {
             child: Column(
               children: [
                 HomeBar(),
-                Text(
-                  "Home Page",
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
+                //
+                Padding(
+                  padding: EdgeInsets.only(top: 20), // Adjust the value as per your requirement
+                  child: Text(
+                    "Home Page",
+                    style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
                 SizedBox(
@@ -219,7 +223,7 @@ class HomeBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
-      height: 220,
+      height: 150,
       width: double.infinity,
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.only(
