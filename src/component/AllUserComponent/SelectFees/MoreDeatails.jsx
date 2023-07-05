@@ -1,5 +1,4 @@
 import React from 'react'
-//import carFee from '../../images/carfee.jpg'
 import { Button } from 'react-bootstrap'
 import './Style.css'
 import {Bounce} from 'react-awesome-reveal'
@@ -32,13 +31,13 @@ export default function MoreDeatails({ ShowOrNot, notify, theImage,TransID,UserS
         <div className='car'>
           {/* <img src={theImage} alt='the real image not found now'/> */}
           <img src={theImage} alt='the real image not found now'/>
-              <div  className='btns-img'>
+          <div  className='btns-img'>
             <Button style={{backgroundColor:'teal'}} className='btn-img' onClick={DoReport}>تقديم الشكوي</Button>
             <Button style={{backgroundColor:'teal'}}  onClick={() =>ShowOrNot(false)} className='btn-img'> الغاء</Button>
-              </div>
+          </div>
           </div>
     
-    </div>
+       </div>
     </Bounce>
   )
 }

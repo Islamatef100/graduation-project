@@ -13,15 +13,17 @@ export default function Header() {
   return (
       <div className='Allhead'>
             <div className='header container'>
-        <NavLink to={'/home'}> <img className='logo-style' src={Logo} alt="" /></NavLink>
-          {/* <NavLink to='#'><img className='logo-style' src='Logo.png' alt="" /></NavLink>  */}
+        <NavLink to={'/home'}> <img className='logo-style' src={Logo} alt="" />  </NavLink>
+    
         <div className='navebar'>  
           {
             user || admin
-              ? <NavLink to={'/home'} onClick={() => { localStorage.removeItem('userGraduationProject'); setUserExistOrNot(0); funAdmin(0); toast.success(' تم الخروج من حسابك') }}>تسجيل الخروج</NavLink>
+              ? <NavLink className='switchInMobile' to={'/home'} onClick={() => { localStorage.removeItem('userGraduationProject'); setUserExistOrNot(0); funAdmin(0); toast.success(' تم الخروج من حسابك') }}>تسجيل الخروج</NavLink>
               : <NavLink to={'/signin'} className='switchInMobile'>تسجيل الدخول</NavLink>
           }
-          <NavLink to={'/SignUp'} className='switchInMobile'>انشاء حساب</NavLink>
+          {
+            user || admin ? null :  <NavLink to={'/SignUp'} className='switchInMobile'>انشاء حساب</NavLink>
+          }
            <NavDropdown
               id="nav-dropdown-dark-example"
               title="المزيد"

@@ -49,6 +49,7 @@ export default function CarCard({exit,number, nationalID, car_ID, car_Type, img_
             console.log('can not decline car with api in carCard component.')
         }
     }
+        
     return (
       <div className='sectionCarCard'>
             <div className='AllcarCard'>
@@ -56,44 +57,44 @@ export default function CarCard({exit,number, nationalID, car_ID, car_Type, img_
                 <h2 className='numberCard'>{number}</h2>                
                 <div className='img-style'>
                     {console.log('image in approve car is:',img_)}
-                    <img src={`../../../../../final/uploads/cars/${img_}`} alt="car image" />
+                    <img src={img_} alt="car image not found" />
                     {/* {  <img src={img} alt="car image" />} */}
                 </div>
                 <div className='carInfo'>
                     <div className='one-data'>
-                            <h3 >  < BsPersonVcard  className='icon'/>الرقم القومي:</h3>
+                            <h3 >  < BsPersonVcard  className='iconmenue'/>الرقم القومي:</h3>
                         <p>{nationalID}</p>
                         </div>
                         <div className='one-data' >
-                            <h3> < BiTimeFive  className='icon'/>تاريخ بدايه الرخصه: </h3>
+                            <h3> < BiTimeFive  className='iconmenue'/>تاريخ بدايه الرخصه: </h3>
                         <p>{licenseCreateDate}</p>
                         </div>
                         <div className='one-data'>
-                            <h3> < BiTimeFive className='icon' />تاريخ نهايه الرخصه:</h3>
+                            <h3> < BiTimeFive className='iconmenue' />تاريخ نهايه الرخصه:</h3>
                           <p>{licensEexpiredDate}</p>
                         </div>
                             <div className='one-data'>
-                                <h3> < ImInsertTemplate className='icon' /> رقم العربيه:</h3>
+                                <h3> < ImInsertTemplate className='iconmenue' /> رقم العربيه:</h3>
                                  <p> {car_ID}</p>
                             </div>
                             <div className='one-data'>       
-                            <h3>  <MdColorLens   className='icon'/>اللون:</h3>
+                            <h3>  <MdColorLens   className='iconmenue'/>اللون:</h3>
                                <p>{ color_}</p>
                                 </div>
                             <div className='one-data' >
-                                <h3 >  < MdLocationCity   className='icon'/>وحده مرور:</h3>
+                                <h3 >  < MdLocationCity   className='iconmenue'/>وحده مرور:</h3>
                               <p> {passageUnit}</p>
                             </div>
                             <div className='one-data' >
-                                <h3>  < BsCalendar2Date  className='icon'/>تاريخ التصنيع: : </h3>
+                                <h3>  < BsCalendar2Date  className='iconmenue'/>تاريخ التصنيع: : </h3>
                               <p>{manufactureringYear}</p>
                                 </div>
                             <div className='one-data'>
-                                <h3>   < AiOutlineCar  className='icon'/>النوع :</h3>
+                                <h3>   < AiOutlineCar  className='iconmenue'/>النوع :</h3>
                                 <p> {vehicleClass}</p>
                             </div>
                             <div className='one-data' >
-                                <h3>    < AiOutlineCar className='icon' />المودل:</h3>
+                                <h3>    < AiOutlineCar className='iconmenue' />المودل:</h3>
                                   <p>{ car_Type}</p>
                                 </div>
                     

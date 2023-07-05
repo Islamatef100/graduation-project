@@ -21,7 +21,6 @@ export default function LogIn() {
             setTypePassword('password')
         }
     }
-
     const { setUserExistOrNot, changeUserSnn,funSetToken,funAdmin } = useContext(SignInUserInfo)
     const sugnIn = (e) => {
         e.preventDefault()
@@ -43,11 +42,15 @@ export default function LogIn() {
                         })
                     });
                     const { status, token, u } = await responsLogIndata.json()
+                    if (u === null) {
+                         setBorderColor('red')
+                         setpassword('')
+                         setemail('')
+                    }
                         const userStorageData = JSON.stringify({
                         tokens_storage: token,
-                        user_ssn_storage: u.user_ssn,
-                        AdminOrUser:u.is_admin,
-                        
+                      user_ssn_storage: u.user_ssn,
+                        AdminOrUser:u.is_admin,   
                         })
                     // to store in local storage
                     if (status === true) {
@@ -65,9 +68,6 @@ export default function LogIn() {
                         else {
                             setUserExistOrNot(1)
                         }
-                        //console.log('from lig in user sn is:',u.user_ssn)
-                        // here i want find another way whithout do reload for page.
-                     //  window.location='/home'
                     }
                     else {
                         console.log('email or password in valid..')

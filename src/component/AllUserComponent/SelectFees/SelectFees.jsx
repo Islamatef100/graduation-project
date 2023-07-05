@@ -35,9 +35,9 @@ export default function SelectFees({ notify }) {
   const [ShowImage, SetShowImage] = useState(false)
   // let selectedData = []
   const [AllFee, setAllFee] = useState(0)
-  const calckAllMoney = (fee,fine) => {
-    setAllFee(fee+fine)
-  }
+  // const calckAllMoney = (fee,fine) => {
+  //   setAllFee(fee+fine)
+  // }
   const doPayment = (transactinID) => {
     try {
       const GetLink = async()=> {
@@ -62,14 +62,6 @@ export default function SelectFees({ notify }) {
       console.log('can not get payment link from API')
     }
   }
-
-
-
-
-
-
-
-
   const Seeimage = async (img_name, id) => {  
 
     console.log('img name is: ', img_name)
@@ -78,10 +70,6 @@ export default function SelectFees({ notify }) {
     //console.log('all path of image is:', img_path)
     SetShowImage(true)
   }
-
-
-
-
 return (
     <div className='font color-body'>
     {(ShowImage && img_path !== '') ? < MoreDeatails

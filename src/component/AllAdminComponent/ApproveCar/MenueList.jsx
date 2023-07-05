@@ -27,15 +27,15 @@ export default function MenueList({number, nationalID, carID, carType, img, colo
             <Row className='rowParent' onClick={() => setShowData(1)}>
                 <h5 className='number'>{number}</h5>
               <Col sm='12' xs='12' lg='5' className='col'>
-               <h4>  < BsPersonVcard  className='icon'/>الرقم القومي:  </h4>
+               <h4>  < BsPersonVcard  className='iconmenue'/>الرقم القومي:  </h4>
                     <p>{nationalID}</p>
           </Col>
           <Col sm='12'xs='12' lg='3' className='col'>
-                 <h4> < ImInsertTemplate className='icon' />رقم العربيه: </h4>
+                 <h4> < ImInsertTemplate className='iconmenue' />رقم العربيه: </h4>
                     <p >{carID}</p>     
           </Col>
           <Col sm='12' xs='12' lg='3' className='col'>
-               <h4>   < AiOutlineCar className='icon' />المودل: </h4>
+               <h4>   < AiOutlineCar className='iconmenue' />المودل: </h4>
                     <p>{carType}</p>
            </Col>
       </Row>

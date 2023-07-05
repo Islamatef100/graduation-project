@@ -11,7 +11,7 @@ export default function HomeComponent() {
               </video>    
       </div>
       <div className='d-flex justify-content-center'>
-         <h1 className='poularQueston my-5'>اسئله شائعه</h1>
+         <h1 className='poularQueston'>اسئله شائعه</h1>
       </div>
      
     <AccordionSection/>
