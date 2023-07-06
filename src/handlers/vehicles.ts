@@ -169,7 +169,7 @@ router.post('/',verifyTokenAndAdmin,uploadImage ,async (req: express.Request, re
       res.status(500).json(`Cannot Delete the vehicle. ${error}.`);
     }
   });
-  router.patch('/:carId/stolen', verifyTokenAndAuthorization, async (req: Request, res: Response) => {
+  router.patch('/:id/:carId/stolen', verifyTokenAndAuthorization, async (req: Request, res: Response) => {
     try {
       const vehicle = await operations.stolen_vehicle(req.params.carId);
       res.status(200).json(vehicle);
@@ -177,7 +177,7 @@ router.post('/',verifyTokenAndAdmin,uploadImage ,async (req: express.Request, re
       res.status(500).json(`Cannot Get the vehicle As Stolen. ${error}.`);
     }
   });
-  router.patch('/:carId/safe', verifyTokenAndAuthorization, async (req: Request, res: Response) => {
+  router.patch('/:id/:carId/safe', verifyTokenAndAuthorization, async (req: Request, res: Response) => {
     try {
       const vehicle = await operations.retrieved_vehicle(req.params.carId);
       res.status(200).json(vehicle);
