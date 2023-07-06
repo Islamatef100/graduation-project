@@ -123,11 +123,11 @@ Widget buildTrasactionsItem(Transactions ttmodel, context) => Padding(
           //   decoration: BoxDecoration(
           //     color: Color(0xffd4ecf7),
           //     borderRadius: BorderRadius.circular(10),
-          //   ), 
+          //   ),
           //   child: Image.asset('assets/plates/'+ttmodel.vehicleImage,
           //     height: 150,
           //     width: double.infinity,
-          //     //width: 150, 
+          //     //width: 150,
           //   ),
           // ),
           Container(
@@ -267,7 +267,29 @@ Widget buildTrasactionsItem(Transactions ttmodel, context) => Padding(
                       ),
                     ],
                   ),
-                  ],
+                  Row(
+                    children: [
+                      Text(
+                        "Report State: ",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Text(
+                        ttmodel.isReported,
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ),
           ),

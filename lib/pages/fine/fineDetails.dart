@@ -14,7 +14,9 @@ import '../../network/remote/dio_Helper.dart';
 import '../../shared/Components/components.dart';
 import '../../shared/constants/constants.dart';
 
-class tDetail extends StatefulWidget {
+import 'package:http/http.dart' as http;
+
+class tDetail extends StatelessWidget {
   late Transactions tt;
 
   tDetail({
@@ -22,11 +24,27 @@ class tDetail extends StatefulWidget {
     required this.tt,
   }) : super(key: key);
 
-  @override
-  State<tDetail> createState() => _tDetailState();
-}
+  Future<void> transactionreport() async {
+    var headers = {
+      'Authorization':
+          'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJfc3NuIjoiMzAxMTAzMDIzMDAxMTMiLCJ1c2VyX25hbWUiOiJnZW9yZ2UiLCJtYW51ZmFjdHVyZXJfbnVtYmVyIjoiMSIsInVzZXJfZW1haWwiOiJnZW9yZ2VAYWRtaW4uY29tIiwidXNlcl9wYXNzd29yZCI6IiQyYiQxMCR2cUJXaFkweDFSbjFYUU1GdWpBaE4uM3lqa3pFWHMvZkhYbXRHaEZaSC5ub1RVak9tejBibSIsInVzZXJfYWRkcmVzcyI6ImZheW91bSIsInVzZXJfam9iIjoic3R1ZGVudCIsInVzZXJfbmF0aW9uYWxpdHkiOiJFZ3lwdGlhbiIsInVzZXJfcGhvbmUiOiIwMTAyNzgyNzY1NCIsInVzZXJfYmQiOiIzMC0xMC0yMDAxIiwidXNlcl9nb3Zlcm5vcmF0ZSI6ImZheW91bSIsImlzX2FkbWluIjoiYWRtaW4ifSwiaWF0IjoxNjgzOTE2MDQ0fQ.L2krv-gpAVPG9OEBruscdIowfGzQ8MwMDpyY3TFCMlI'
+    };
+    var request = http.Request(
+        'PATCH',
+        Uri.parse(
+            'http://10.0.2.2:4242/transactions/$ssn/report/${tt.transactionId}'));
 
-class _tDetailState extends State<tDetail> {
+    request.headers.addAll(headers);
+
+    http.StreamedResponse response = await request.send();
+
+    if (response.statusCode == 200) {
+      print(await response.stream.bytesToString());
+    } else {
+      print(response.reasonPhrase);
+    }
+  }
+
   Future<void> LaunchURL(String url) async {
     final Uri uri = Uri(host: url);
 
@@ -55,60 +73,63 @@ class _tDetailState extends State<tDetail> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              // ClipRRect(
-              //   // radius: 70,  CircleAvatar
-              //   backgroundImage: AssetImage('assets/plates/'+widget.tt.vehicleImage),
-              // ),
               ClipRRect(
                 // borderRadius: BorderRadius.circular(8.0), // Set the border radius to achieve rounded corners
-                  child: Image.asset('assets/plates/' + widget.tt.vehicleImage,
+                child: Image.asset(
+                  'assets/plates/' + tt.vehicleImage,
                   height: 150,
                   width: double.infinity,
                 ),
               ),
               SizedBox(
-                height: 50,
-                width: 150,
+                height: 30,
               ),
-              itemProfile(
-                  'Transaction ID',
-                  widget.tt.transactionId.toString(),
+              itemProfile('Transaction Number', tt.transactionId.toString(),
                   CupertinoIcons.car_detailed),
               SizedBox(
                 height: 30,
               ),
-              itemProfile(
-                  'License', widget.tt.vehicle, CupertinoIcons.car_detailed),
-              SizedBox(
-                height: 30,
-              ),
-              itemProfile('Fine', widget.tt.fine.toString(),
-                  CupertinoIcons.car_detailed),
-              SizedBox(
-                height: 30,
-              ),
-              itemProfile('Payment State', widget.tt.paymentStatus,
-                  CupertinoIcons.car_detailed),
+              itemProfile('License', tt.vehicle, CupertinoIcons.car_detailed),
               SizedBox(
                 height: 30,
               ),
               itemProfile(
-                  'Place', widget.tt.place, CupertinoIcons.car_detailed),
+                  'Fee', tt.fine.toString(), CupertinoIcons.car_detailed),
               SizedBox(
                 height: 30,
               ),
-              itemProfile('Day', widget.tt.adjustmentDate,
+              itemProfile('Date', tt.adjustmentDate.toString(),
                   CupertinoIcons.car_detailed),
               SizedBox(
                 height: 30,
               ),
-              itemProfile('Time', widget.tt.adjustmentTime,
+              itemProfile('Time', tt.adjustmentTime.toString(),
                   CupertinoIcons.car_detailed),
+              SizedBox(
+                height: 30,
+              ),
+              itemProfile('Place', tt.place, CupertinoIcons.car_detailed),
+              SizedBox(
+                height: 30,
+              ),
+              itemProfile('Payment State', tt.paymentStatus,
+                  CupertinoIcons.car_detailed),
+              SizedBox(
+                height: 30,
+              ),
+              itemProfile(
+                  'Report State', tt.isReported, CupertinoIcons.car_detailed),
               SizedBox(
                 height: 30,
               ),
               ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    transactionreport();
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color.fromARGB(
+                        255, 232, 54, 54), // Set the background color to red
+                  ),
                   child: Text(
                     "Report",
                   )),
@@ -117,7 +138,7 @@ class _tDetailState extends State<tDetail> {
                     // print(${widget.tt.transactionId});
                     DioHelper.getData(
                       url:
-                          'http://10.0.2.2:4242/transactions/$ssn/checkout-session/${widget.tt.transactionId}',
+                          'http://192.168.1.3:4242/transactions/$ssn/checkout-session/${tt.transactionId}',
                       //      10.0.2.2:4242/transactions/30012012300977/checkout-session/102
                     ).then((value) {
                       session_url = value.data['url'];

@@ -18,7 +18,7 @@ class StolenCubit extends Cubit<StolenStates> {
   void getStolenCars() {
     DioHelper.getData(
       url:
-          'http://10.0.2.2:4242/vehicles/$ssn/usersafecars', //10.0.2.2:4242/vehicles/30012012300977/userstolencars
+          'http://10.0.2.2:4242/vehicles/$ssn/userstolencars', //10.0.2.2:4242/vehicles/30012012300977/userstolencars
       // query: {'is_stolen': 'stolen'},
       token: token,
     ).then((value) {
