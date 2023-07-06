@@ -454,7 +454,7 @@
 						},
 						"method": "PATCH",
 						"header": [],
-						"url": "localhost:4242/vehicles/ل م 7 8 8 3/stolen"
+						"url": "localhost:4242/vehicles/30012012300977/ف ب ن 8 6 1 4/stolen"
 					},
 					"response": []
 				},
@@ -469,7 +469,7 @@
 						},
 						"method": "PATCH",
 						"header": [],
-						"url": "localhost:4242/vehicles/ف ب ن 8 6 1 4/safe"
+						"url": "localhost:4242/vehicles/30012012300977/ل م 7 8 8 3/safe"
 					},
 					"response": []
 				},
@@ -785,7 +785,7 @@
 						},
 						"method": "PATCH",
 						"header": [],
-						"url": "localhost:4242/transactions/30012012300977/report/130"
+						"url": "localhost:4242/transactions/30012012300977/report/129"
 					},
 					"response": []
 				},
@@ -919,8 +919,15 @@
 				{
 					"name": "user transaction notpaid",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJfc3NuIjoiMzAxMDMwMTIzMDAzNzgiLCJ1c2VyX25hbWUiOiJ6ZWFkIiwibWFudWZhY3R1cmVyX251bWJlciI6IjIyMiIsInVzZXJfZW1haWwiOiJ6ZWFkQGFkbWluLmNvbSIsInVzZXJfcGFzc3dvcmQiOiIkMmIkMTAkZy9UUW5DMTZYUWx6aUh2d25zcGcvZUJTaTBUZDNZWHJ0TTdRd0pzNU9ZQkVFRVY2SjVNOS4iLCJ1c2VyX2FkZHJlc3MiOiJmYXlvdW0iLCJ1c2VyX2pvYiI6InN0dWRlbnQiLCJ1c2VyX25hdGlvbmFsaXR5IjoiRWd5cHRpYW4iLCJ1c2VyX3Bob25lIjoiMDEwMjc4Mjc2NTQiLCJ1c2VyX2JkIjoiMzAtMTAtMjAwMSIsInVzZXJfZ292ZXJub3JhdGUiOiJmYXlvdW0iLCJpc19hZG1pbiI6ImFkbWluIn0sImlhdCI6MTY4ODUyOTM5NH0.BWILU4AEH-zKMKiTlpjISP6a0bJXpmUTFiGZgFAAAAM"
+							}
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": "localhost:4242/transactions/30012012300977/user/notpaid"
 					},
 					"response": []
 				},
