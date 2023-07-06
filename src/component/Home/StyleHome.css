@@ -11,14 +11,23 @@ video{
 }
 .VdStyle{
     height: 100vh;
-    /* overflow: hidden;
-    margin: 0 auto; */
-    width: 100vw;
+    overflow: hidden;
+    margin: 0 auto; 
+    
 }
 /* .video{
     width: 80%;
     margin: 0 auto;
 } */
+.HomeSlider{
+    margin-top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+.HomeSlider-item{
+    height: 100%;
+}
 .accordionStyle{
     margin: 50px 0 ;
     font-size: 1.4rem;
