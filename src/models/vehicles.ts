@@ -198,13 +198,13 @@ export class vehicleStore {
         }
       }
       // user stolen
-      async allUserStolenVehicles(id: string): Promise<Vehicle> {
+      async allUserStolenVehicles(id: string): Promise<Vehicle[]> {
         try {
           const sql = 'SELECT * FROM vehicles WHERE is_stolen = $1 AND license = $2';
           const conn = await Client.connect();
           const vehicle = await conn.query(sql, ["stolen",id]);
           conn.release();
-          return vehicle.rows[0];
+          return vehicle.rows;
         } catch (err) {
           throw new Error(`Cannot get all user stolen cars. ${err}.`);
         }
@@ -221,6 +221,20 @@ export class vehicleStore {
           throw new Error(`Cannot get all user stolen cars. ${err}.`);
         }
       }
-      //
+      // all stolen cars for admins
+      async allStolenVehicles(): Promise<Vehicle[]> {
+        try {
+          const sql = 'SELECT * FROM vehicles WHERE is_stolen = $1';
+          const conn = await Client.connect();
+          const vehicle = await conn.query(sql, ["stolen"]);
+          conn.release();
+          return vehicle.rows;
+        } catch (err) {
+          throw new Error(`Cannot get all user stolen cars. ${err}.`);
+        }
+      }
     }
+
+
+
            

@@ -170,7 +170,20 @@ export class transactionStore {
   //     throw new Error(`Cannot Display The Specific Vehicle transactions. ${err}.`);
   //   }
   // }
-
+  //######################################################################################
+  //######################################################################################
+  async showUserTransactionsReported(id: string): Promise<Transaction[]> {
+    try {
+      const conn = await Client.connect();
+      const sql = "SELECT transaction_id,vehicle,transactions.vehicle_image,fine,payment_date,payment_status,place,adjustment_date,adjustment_time,is_reported FROM transactions INNER JOIN vehicles ON transactions.vehicle = vehicles.vehicle_id INNER JOIN users ON vehicles.license = users.user_ssn WHERE users.user_ssn = $1 AND transactions.is_reported='waiting'";
+      const vehicle = await conn.query(sql, [id]);
+      conn.release();
+      const vehicles = vehicle.rows;
+      return vehicles;
+    } catch (err) {
+      throw new Error(`Cannot Display The Specific Vehicle transactions. ${err}.`);
+    }
+  }
   //######################################################################################
   //######################################################################################
   async update(u: Transaction, id: string): Promise<Transaction> {
@@ -236,10 +249,11 @@ export class transactionStore {
       throw new Error(`Cannot make the transaction reported. ${err}.`);
     }
   }
+  // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   async reportApproved(id: string): Promise<Transaction> {
     try {
       const conn = await Client.connect();
-      const sql = 'UPDATE transactions SET is_reported=$2 WHERE transaction_id=$1 RETURNING *';
+      const sql = "UPDATE transactions SET is_reported=$2 , payment_status='paid' WHERE transaction_id=$1 RETURNING *";
       const vehicle = await conn.query(sql, [id, "approved"]);
       conn.release();
       return vehicle.rows[0];
@@ -247,6 +261,7 @@ export class transactionStore {
       throw new Error(`Cannot make the transaction reported Approved. ${err}.`);
     }
   }
+  // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   async reportDeclined(id: string): Promise<Transaction> {
     try {
       const conn = await Client.connect();

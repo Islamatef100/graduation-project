@@ -12,6 +12,16 @@ const router = express.Router();
 const operations = new vehicleStore();
 const gtoken = process.env.TOKEN_SECRET;
 
+// all admin reports 
+router.get('/allstolencars', verifyTokenAndAdmin, async (req: Request, res: Response) => {
+  try {
+    const deleted = await operations.allStolenVehicles();
+    res.status(200).json({"vehicles":deleted});
+  } catch (error) {
+    res.status(500).json(`Cannot handle all user stolen cars. ${error}.`);
+  }
+});
+// -----------------------------------------------
 router.post('/',verifyTokenAndAdmin,uploadImage ,async (req: express.Request, res: express.Response) => {
     try {
       const vehicle: Vehicle = {

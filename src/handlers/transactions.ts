@@ -90,6 +90,16 @@ router.post('/',verifyTokenAndAdmin,uploadImage, carType,async (req: express.Req
   });
   //########################################################################
   //########################################################################
+  router.get('/:id/user/reported', verifyTokenAndAuthorization, async (req: Request, res: Response) => {
+    try {
+      const vehicle = await operations.showUserTransactionsReported(req.params.id);
+      res.status(200).json({"transactions":vehicle});
+    } catch (error) {
+      res.status(500).json(`Cannot Get the vehicle. ${error}.`);
+    }
+  });
+  //########################################################################
+  //########################################################################
   router.get('/:id/car/:carId', verifyTokenAndAuthorization, async (req: Request, res: Response) => {
     try {
       const vehicle = await operations.showVehicleTransactions(req.params.carId as unknown as string);
