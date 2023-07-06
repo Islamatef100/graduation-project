@@ -67,7 +67,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"user_email\":\"mufreh@user.com\",\r\n    \"user_password\":\"123456789\"\r\n}",
+							"raw": "{\r\n    \"user_email\":\"zead@admin.com\",\r\n    \"user_password\":\"123456789\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -132,12 +132,12 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImxpY2Vuc2VfaWQiOjEsInVzZXJfbmFtZSI6Imdlb3JnZSIsInVzZXJfc3NuIjoxMjM0NTY3ODksIm1hbnVmYWN0dXJlcl9udW1iZXIiOjEsInVzZXJfZW1haWwiOiJnZW9yZ2VAYWRtaW4uY29tIiwidXNlcl9wYXNzd29yZCI6IiQyYiQxMCRDQmJhNVdzRzkzRzRCR0tESTh6NzF1a0R5ZTZzSXpOZmo4SWlETy9kQi9Ta3l6cHh3NTVCeSIsInVzZXJfYWRkcmVzcyI6ImZheW91bSIsInVzZXJfam9iIjoic3R1ZGVudCIsInVzZXJfbmF0aW9uYWxpdHkiOiJFZ3lwdGlhbiIsInVzZXJfcGhvbmUiOiIwMTAyNzgyNzY1NCIsInVzZXJfYmQiOiIzMC0xMC0yMDAxIiwidXNlcl9nb3Zlcm5vcmF0ZSI6ImZheW91bSJ9LCJpYXQiOjE2NzgxMzMwNTl9.YURefhfT3jRMU8w4KUXnZyeFyZZPFMOXgo9OommJLLc"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJfc3NuIjoiMzAxMDMwMTIzMDAzNzgiLCJ1c2VyX25hbWUiOiJ6ZWFkIiwibWFudWZhY3R1cmVyX251bWJlciI6IjIyMiIsInVzZXJfZW1haWwiOiJ6ZWFkQGFkbWluLmNvbSIsInVzZXJfcGFzc3dvcmQiOiIkMmIkMTAkZy9UUW5DMTZYUWx6aUh2d25zcGcvZUJTaTBUZDNZWHJ0TTdRd0pzNU9ZQkVFRVY2SjVNOS4iLCJ1c2VyX2FkZHJlc3MiOiJmYXlvdW0iLCJ1c2VyX2pvYiI6InN0dWRlbnQiLCJ1c2VyX25hdGlvbmFsaXR5IjoiRWd5cHRpYW4iLCJ1c2VyX3Bob25lIjoiMDEwMjc4Mjc2NTQiLCJ1c2VyX2JkIjoiMzAtMTAtMjAwMSIsInVzZXJfZ292ZXJub3JhdGUiOiJmYXlvdW0iLCJpc19hZG1pbiI6ImFkbWluIn0sImlhdCI6MTY4ODUyOTM5NH0.BWILU4AEH-zKMKiTlpjISP6a0bJXpmUTFiGZgFAAAAM"
 							}
 						},
 						"method": "DELETE",
 						"header": [],
-						"url": "localhost:3000/users/3"
+						"url": "localhost:4242/users/30103012300388"
 					},
 					"response": []
 				},
@@ -214,7 +214,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "localhost:4242/vehicles/30103012300378"
+						"url": "localhost:4242/vehicles/30012012300977"
 					},
 					"response": []
 				},
@@ -399,6 +399,51 @@
 					"response": []
 				},
 				{
+					"name": "user stolen cars",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJfc3NuIjoiMzAxMDMwMTIzMDAzNzgiLCJ1c2VyX25hbWUiOiJ6ZWFkIiwibWFudWZhY3R1cmVyX251bWJlciI6IjEiLCJ1c2VyX2VtYWlsIjoiemVhZEBhZG1pbi5jb20iLCJ1c2VyX3Bhc3N3b3JkIjoiJDJiJDEwJGcvVFFuQzE2WFFsemlIdnduc3BnL2VCU2kwVGQzWVhydE03UXdKczVPWUJFRUVWNko1TTkuIiwidXNlcl9hZGRyZXNzIjoiZmF5b3VtIiwidXNlcl9qb2IiOiJzdHVkZW50IiwidXNlcl9uYXRpb25hbGl0eSI6IkVneXB0aWFuIiwidXNlcl9waG9uZSI6IjAxMDI3ODI3NjU0IiwidXNlcl9iZCI6IjMwLTEwLTIwMDEiLCJ1c2VyX2dvdmVybm9yYXRlIjoiZmF5b3VtIiwiaXNfYWRtaW4iOiJhZG1pbiJ9LCJpYXQiOjE2ODcwMzAyMTd9.pIwqHClGgeyLOrr0ExNR_5U55mbkNxYCiA49StBmj9A"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "localhost:4242/vehicles/30012012300977/userstolencars"
+					},
+					"response": []
+				},
+				{
+					"name": "user safe cars",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJfc3NuIjoiMzAxMDMwMTIzMDAzNzgiLCJ1c2VyX25hbWUiOiJ6ZWFkIiwibWFudWZhY3R1cmVyX251bWJlciI6IjEiLCJ1c2VyX2VtYWlsIjoiemVhZEBhZG1pbi5jb20iLCJ1c2VyX3Bhc3N3b3JkIjoiJDJiJDEwJGcvVFFuQzE2WFFsemlIdnduc3BnL2VCU2kwVGQzWVhydE03UXdKczVPWUJFRUVWNko1TTkuIiwidXNlcl9hZGRyZXNzIjoiZmF5b3VtIiwidXNlcl9qb2IiOiJzdHVkZW50IiwidXNlcl9uYXRpb25hbGl0eSI6IkVneXB0aWFuIiwidXNlcl9waG9uZSI6IjAxMDI3ODI3NjU0IiwidXNlcl9iZCI6IjMwLTEwLTIwMDEiLCJ1c2VyX2dvdmVybm9yYXRlIjoiZmF5b3VtIiwiaXNfYWRtaW4iOiJhZG1pbiJ9LCJpYXQiOjE2ODcwMzAyMTd9.pIwqHClGgeyLOrr0ExNR_5U55mbkNxYCiA49StBmj9A"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "localhost:4242/vehicles/30012012300977/usersafecars"
+					},
+					"response": []
+				},
+				{
+					"name": "All Stolen Cars for admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJfc3NuIjoiMzAxMDMwMTIzMDAzNzgiLCJ1c2VyX25hbWUiOiJ6ZWFkIiwibWFudWZhY3R1cmVyX251bWJlciI6IjIyMiIsInVzZXJfZW1haWwiOiJ6ZWFkQGFkbWluLmNvbSIsInVzZXJfcGFzc3dvcmQiOiIkMmIkMTAkZy9UUW5DMTZYUWx6aUh2d25zcGcvZUJTaTBUZDNZWHJ0TTdRd0pzNU9ZQkVFRVY2SjVNOS4iLCJ1c2VyX2FkZHJlc3MiOiJmYXlvdW0iLCJ1c2VyX2pvYiI6InN0dWRlbnQiLCJ1c2VyX25hdGlvbmFsaXR5IjoiRWd5cHRpYW4iLCJ1c2VyX3Bob25lIjoiMDEwMjc4Mjc2NTQiLCJ1c2VyX2JkIjoiMzAtMTAtMjAwMSIsInVzZXJfZ292ZXJub3JhdGUiOiJmYXlvdW0iLCJpc19hZG1pbiI6ImFkbWluIn0sImlhdCI6MTY4ODUyOTM5NH0.BWILU4AEH-zKMKiTlpjISP6a0bJXpmUTFiGZgFAAAAM"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "localhost:4242/vehicles/allstolencars"
+					},
+					"response": []
+				},
+				{
 					"name": "mark stolen car",
 					"request": {
 						"auth": {
@@ -409,7 +454,7 @@
 						},
 						"method": "PATCH",
 						"header": [],
-						"url": "localhost:4242/vehicles/ف ط ر 3 1 2 4/stolen"
+						"url": "localhost:4242/vehicles/ل م 7 8 8 3/stolen"
 					},
 					"response": []
 				},
@@ -424,7 +469,7 @@
 						},
 						"method": "PATCH",
 						"header": [],
-						"url": "localhost:4242/vehicles/ف ط ر 3 1 2 4/safe"
+						"url": "localhost:4242/vehicles/ف ب ن 8 6 1 4/safe"
 					},
 					"response": []
 				},
@@ -607,36 +652,6 @@
 						"url": "localhost:4242/vehicles/ف ط ر 3 1 2 2/declined"
 					},
 					"response": []
-				},
-				{
-					"name": "user stolen cars",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJfc3NuIjoiMzAxMDMwMTIzMDAzNzgiLCJ1c2VyX25hbWUiOiJ6ZWFkIiwibWFudWZhY3R1cmVyX251bWJlciI6IjEiLCJ1c2VyX2VtYWlsIjoiemVhZEBhZG1pbi5jb20iLCJ1c2VyX3Bhc3N3b3JkIjoiJDJiJDEwJGcvVFFuQzE2WFFsemlIdnduc3BnL2VCU2kwVGQzWVhydE03UXdKczVPWUJFRUVWNko1TTkuIiwidXNlcl9hZGRyZXNzIjoiZmF5b3VtIiwidXNlcl9qb2IiOiJzdHVkZW50IiwidXNlcl9uYXRpb25hbGl0eSI6IkVneXB0aWFuIiwidXNlcl9waG9uZSI6IjAxMDI3ODI3NjU0IiwidXNlcl9iZCI6IjMwLTEwLTIwMDEiLCJ1c2VyX2dvdmVybm9yYXRlIjoiZmF5b3VtIiwiaXNfYWRtaW4iOiJhZG1pbiJ9LCJpYXQiOjE2ODcwMzAyMTd9.pIwqHClGgeyLOrr0ExNR_5U55mbkNxYCiA49StBmj9A"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "localhost:4242/vehicles/30012012300977/userstolencars"
-					},
-					"response": []
-				},
-				{
-					"name": "user safe cars",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJfc3NuIjoiMzAxMDMwMTIzMDAzNzgiLCJ1c2VyX25hbWUiOiJ6ZWFkIiwibWFudWZhY3R1cmVyX251bWJlciI6IjEiLCJ1c2VyX2VtYWlsIjoiemVhZEBhZG1pbi5jb20iLCJ1c2VyX3Bhc3N3b3JkIjoiJDJiJDEwJGcvVFFuQzE2WFFsemlIdnduc3BnL2VCU2kwVGQzWVhydE03UXdKczVPWUJFRUVWNko1TTkuIiwidXNlcl9hZGRyZXNzIjoiZmF5b3VtIiwidXNlcl9qb2IiOiJzdHVkZW50IiwidXNlcl9uYXRpb25hbGl0eSI6IkVneXB0aWFuIiwidXNlcl9waG9uZSI6IjAxMDI3ODI3NjU0IiwidXNlcl9iZCI6IjMwLTEwLTIwMDEiLCJ1c2VyX2dvdmVybm9yYXRlIjoiZmF5b3VtIiwiaXNfYWRtaW4iOiJhZG1pbiJ9LCJpYXQiOjE2ODcwMzAyMTd9.pIwqHClGgeyLOrr0ExNR_5U55mbkNxYCiA49StBmj9A"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "localhost:4242/vehicles/30012012300977/usersafecars"
-					},
-					"response": []
 				}
 			]
 		},
@@ -770,7 +785,7 @@
 						},
 						"method": "PATCH",
 						"header": [],
-						"url": "localhost:4242/transactions/report/2"
+						"url": "localhost:4242/transactions/30012012300977/report/130"
 					},
 					"response": []
 				},
@@ -882,7 +897,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "localhost:4242/transactions/30103012300378/user"
+						"url": "localhost:4242/transactions/30012012300977/user"
 					},
 					"response": []
 				},
@@ -898,6 +913,29 @@
 						"method": "GET",
 						"header": [],
 						"url": "localhost:4242/transactions/30012012300977/user/paid"
+					},
+					"response": []
+				},
+				{
+					"name": "user transaction notpaid",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "All User Transaction Reported",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJfc3NuIjoiMzAxMDMwMTIzMDAzNzgiLCJ1c2VyX25hbWUiOiJ6ZWFkIiwibWFudWZhY3R1cmVyX251bWJlciI6IjIyMiIsInVzZXJfZW1haWwiOiJ6ZWFkQGFkbWluLmNvbSIsInVzZXJfcGFzc3dvcmQiOiIkMmIkMTAkZy9UUW5DMTZYUWx6aUh2d25zcGcvZUJTaTBUZDNZWHJ0TTdRd0pzNU9ZQkVFRVY2SjVNOS4iLCJ1c2VyX2FkZHJlc3MiOiJmYXlvdW0iLCJ1c2VyX2pvYiI6InN0dWRlbnQiLCJ1c2VyX25hdGlvbmFsaXR5IjoiRWd5cHRpYW4iLCJ1c2VyX3Bob25lIjoiMDEwMjc4Mjc2NTQiLCJ1c2VyX2JkIjoiMzAtMTAtMjAwMSIsInVzZXJfZ292ZXJub3JhdGUiOiJmYXlvdW0iLCJpc19hZG1pbiI6ImFkbWluIn0sImlhdCI6MTY4ODUyOTM5NH0.BWILU4AEH-zKMKiTlpjISP6a0bJXpmUTFiGZgFAAAAM"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "localhost:4242/transactions/30012012300977/user/reported"
 					},
 					"response": []
 				}
