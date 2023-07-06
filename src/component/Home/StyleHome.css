@@ -10,9 +10,15 @@ video{
     margin-top: 93px;
 }
 .VdStyle{
-    width: 100vw;
     height: 100vh;
+    /* overflow: hidden;
+    margin: 0 auto; */
+    width: 100vw;
 }
+/* .video{
+    width: 80%;
+    margin: 0 auto;
+} */
 .accordionStyle{
     margin: 50px 0 ;
     font-size: 1.4rem;
@@ -27,6 +33,37 @@ video{
     width: fit-content;
     border-bottom: 3px solid teal;
 }
+.map{
+    width: 80vw;
+    margin:  0 auto;
+    max-height: 300px;
+}
+.AllServicesSection{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 70px;
+    align-items: center;
+}
+.traficRoad{
+    width: 40vw;
+    overflow: hidden;
+}
+.services{
+    display: flex;
+    width: 30vw;
+    flex-wrap: wrap;
+}
+.itemService{
+    width: 150px;
+    min-width: 100px;
+    height: 100px;
+    min-height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 @media (max-width:1330px) {
     .VdStyle {
         width: 100vw;
@@ -45,5 +82,15 @@ video{
     }
     .poularQueston{
         padding-top: 50px;
+    }
+    .traficRoad{
+        width: 100%;
+    }
+    .AllServicesSection{
+        flex-direction: column;
+        align-items: center;
+    }
+    .services{
+        align-items: center;
     }
 }
