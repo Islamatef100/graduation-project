@@ -12,7 +12,7 @@ import { SiContactlesspayment } from 'react-icons/si'
 // not for me
 import { ImNotification } from 'react-icons/im' 
 import { MdDirectionsCarFilled } from 'react-icons/md' 
-
+import safecare from '../../images/safeCar.jpeg'
 export default function AllServices() {
   return (
       <div className='AllServicesSection container'>
@@ -24,6 +24,11 @@ export default function AllServices() {
               <div className='itemService'>
                   < MdDirectionsCarFilled fontSize='40px' color='teal'/>
                   <p> الابلاغ عن سرقع السياره</p>
+                 
+              </div>
+              <div className='itemService' style={{marginTop:'-40px'}}>
+                  <img src={safecare} alt='safecar Image' style={{ width: '150px', height:'80px'}}/>
+                  <p>  وحدت سيارتي  </p>
                  
               </div>
               <div className='itemService'>

@@ -41,8 +41,6 @@ const HomeSlider = () => {
               <Carousel.Item className="HomeSlider-item" interval={1500}>
                   <img src={img8} alt="" />
               </Carousel.Item>
-              
-        
       </Carousel>
     
     </div>

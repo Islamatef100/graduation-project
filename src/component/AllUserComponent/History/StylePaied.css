@@ -103,13 +103,14 @@ table thead td{
         transform: rotatey(0deg);
     }
 } */
-.transaction_notFound{
-        width: 400px;
+.transaction_notFound_History{
+        width: 600px;
         position:absolute;
         top: 50%;
         right: 50%;
         transform: translatex(50%);
         color: red;
+        border: none;
 }
 
 .PayedSector{

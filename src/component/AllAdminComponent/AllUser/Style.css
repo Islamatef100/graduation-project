@@ -22,6 +22,17 @@
     top: 2%;
 
 }
+.title-admin-question {
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
+    margin-top: 0;
+    width: fit-content;
+    flex-direction: row;
+    text-align: center;
+    padding-top: 30px;
+    border-bottom: 3px solid teal;
+}
 .number{
     position: absolute;
     top: 2%;

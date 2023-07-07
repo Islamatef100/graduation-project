@@ -30,7 +30,11 @@ export default function GetAllUser({searchWord}) {
   }, []);
 
   return (
-    <Row className='SectionAllUserData'>
+    <>
+      <div className='title-admin-question'>
+        <h1 className=''>جميع العملاء</h1>
+      </div>
+    <Row className='SectionAllUserData'> 
       {isLoad ? (
         Alluser.map((user, index) => {
           if (user.is_admin === 'admin')
@@ -54,6 +58,8 @@ export default function GetAllUser({searchWord}) {
         })
       ) : 
         <p style={{textAlign:'center',width:'100%'}}>Loading...</p>}
-    </Row>
+      </Row>
+      </>
+
   );
 }

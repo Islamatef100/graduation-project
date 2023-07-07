@@ -36,11 +36,20 @@ video{
     font-size: 1.4rem;
     min-width: 20vw;
 }
-.poularQueston{
+.title-question{
+    display: flex;
+    justify-content: center;
+    margin: 0px auto;
+    width: fit-content;
+    flex-direction: row;
     text-align: center;
     padding-top: 200px;
+    border-bottom: 3px solid teal;
+}
+.allServices-title {
     width: fit-content;
     border-bottom: 3px solid teal;
+    padding-top: 200px;
 }
 .map{
     width: 80vw;
@@ -64,15 +73,21 @@ video{
     flex-wrap: wrap;
 }
 .itemService{
-    width: 150px;
-    min-width: 100px;
-    height: 100px;
-    min-height: 60px;
+    /* width: 150px; */
+    flex-basis: 30%;
+    /* min-width: 100px;
+    height: 150px;
+    min-height: 60px; */
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* overflow: hidden; */
+    cursor: pointer;
 }
-
+.itemService:hover p{
+    
+    color: red;
+}
 @media (max-width:1330px) {
     .VdStyle {
         width: 100vw;

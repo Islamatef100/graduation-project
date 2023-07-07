@@ -76,7 +76,7 @@ function App() {
           <Route path='/SignIn/ResetPassword/ConfirmPassword' element={<Configration fun={notify} />} />
           <Route path='/SignIn/ResetPassword/ValidCode' element={<ValidCode />} />
           <Route path='/Profile' element={<ProfilePage />} />
-          <Route path='/history' element={<HistoryPage />} />
+          <Route path='/history' element={<HistoryPage  />} />
           <Route path='*' element={<Error/>} /> 
         </Routes>
         <Footer />

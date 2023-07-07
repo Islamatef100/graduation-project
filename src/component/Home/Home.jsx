@@ -5,22 +5,27 @@ import AccordionSection from './Accordion'
 import EgyptMap from './EgyptMao'
 import AllServices from './AllServices'
 import HomeSlider from './HomeSlider'
+import { FaQuestion } from 'react-icons/fa'
+import { GrServices } from 'react-icons/gr'
+
 export default function HomeComponent() {
   return (
       <>
-          {/* <div className='VdStyle container'>
+          {/* <div className='VdStyle'>
               <video  autoPlay loop muted  className='video'>
                 <source src={VD} type='video/mp4' />
-              </video>    
+          </video>    
       </div> */}
       < HomeSlider />
-          <div className='d-flex justify-content-center'>
-            <h1 className='poularQueston'>جميع الخدمات</h1>
+          <div className='title-question'>
+        <h1 className='poularQueston'>جميع الخدمات</h1>
+        < GrServices  color='teal'  fontSize={'3rem'}/>
           </div>
           <AllServices />
-          <div className='d-flex justify-content-center'>
-            <h1 className='poularQueston'>اسئله شائعه</h1>
-          </div>
+      <div className='title-question'>
+        <h1 className='poularQueston'>اسئله شائعه</h1>
+         < FaQuestion color='teal'  fontSize={'3rem'} />
+        </div>
           <AccordionSection />
           {/* < EgyptMap className='map'/> */}
       </>

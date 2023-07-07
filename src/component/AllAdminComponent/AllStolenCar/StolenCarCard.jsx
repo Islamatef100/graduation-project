@@ -8,47 +8,34 @@ import { MdColorLens } from 'react-icons/md'
 import { MdLocationCity } from 'react-icons/md'
 import { BsCalendar2Date } from 'react-icons/bs'
 import { AiOutlineCar } from 'react-icons/ai'
+import { toast } from 'react-toastify';
+import imgCard from '../../../images/imgCard.jpg'
 import React, { useContext, useState } from 'react'
-import imgcard from '../../../images/imgCard.jpg'
 // import { img } from '../../../../../355654084_570207801946753_1817848671160769477_n.jpg'
 import { SignInUserInfo } from '../../CenterData/UseContextData'
-export default function CarCard({exit,number, nationalID, car_ID, car_Type, img_, color_, manufactureringYear, licenseCreateDate, licensEexpiredDate, vehicleClass,passageUnit,therender}) {
+export default function StolenCarCard({exit,number, nationalID, car_ID, car_Type, img_, color_, manufactureringYear, licenseCreateDate, licensEexpiredDate, vehicleClass,passageUnit,therender}) {
     const { token } = useContext(SignInUserInfo)
-    const AppoveCar = async () => { 
+    // const [update,setUpdte] = useState(0)
+       const FoundCar = async(car_ID,nationalID)=> {
         try {
-            const response = await fetch(`http://localhost:4242/vehicles/${car_ID}/approved`, {
-                method: 'PATCH',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`
+            const response = await fetch(`http://localhost:4242/vehicles/${nationalID}/${car_ID}/safe`, {
+            method: 'PATCH',
+            headers: {
+                        'Content-Type': 'application/json' ,// Specify the content type as JSON
+                        'Authorization': `Bearer ${token}`
                     },
+            
             })
-            //console.log('this response after do approve')
+            console.log(response)
+            console.log('the car number also is: ', car_ID)
+            toast.success(' لقد تم الغاء تتبع السياره')
+            // setUpdte( setUpdte(Math.random()))
             exit(0)
-            therender(Math.render())
-
-        }
-        catch (e) {
-            console.log('can not approve car with api in carCard component.')
-        }
     }
-    const DeclineCar = async() => { 
-         try {
-            const response = await fetch(`http://localhost:4242/vehicles/${car_ID}/declined`, {
-                method: 'PATCH',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`
-                    },
-            })
-             //console.log('this response after do not approve')
-             exit(0)
-             therender(Math.render())
-
-        }
-        catch (e) {
-            console.log('can not decline car with api in carCard component.')
-        }
+    catch (e) {
+        console.log('can not make it stolen in stolen car:')
+        
+    }
     }
         
     return (
@@ -57,8 +44,7 @@ export default function CarCard({exit,number, nationalID, car_ID, car_Type, img_
                     <span className='exit' onClick={()=>exit(0)}>X</span>
                 <h2 className='numberCard'>{number}</h2>                
                 <div className='img-style'>
-                    <img src={imgcard} alt="car image not found" />
-                    {/* {  <img src={img} alt="car image" />} */}
+                    <img src={imgCard} alt="car image not found" />
                 </div>
                 <div className='carInfo'>
                     <div className='one-data'>
@@ -99,9 +85,8 @@ export default function CarCard({exit,number, nationalID, car_ID, car_Type, img_
                                 </div>
                     
 
-                        <div className='accept-refuse-btn'>
-                            <Button className='btn-accept' onClick={AppoveCar}>موافقه</Button>
-                            <Button className='btn-refused' style={{ backgroundColor: 'red' }} onClick={DeclineCar}>رفض</Button>
+                        <div className='accept-refuse-btn d-flex justify-content-center'>
+                            <Button className='btn-refused' style={{padding:'10px',fontSize:'1.5rem'}} onClick={()=>FoundCar(car_ID,nationalID)}>الغاء تتبع السياره</Button>
                         </div>
                 </div>
                     </div>

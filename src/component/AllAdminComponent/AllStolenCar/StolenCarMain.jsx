@@ -1,7 +1,7 @@
-import MenueList from './MenueList'
+import StolenMenueList from './StolenMenueList'
 import React, { useEffect, useContext,useState } from 'react'
 import { SignInUserInfo } from '../../CenterData/UseContextData'
-export default function ApproveCar({searchWord}) {
+export default function StolenCarMain({searchWord}) {
   const [loading, setLoad] = useState(0)
   const [allCarsData, setCarsData] = useState(null)
   const { token } = useContext(SignInUserInfo)
@@ -9,36 +9,35 @@ export default function ApproveCar({searchWord}) {
   useEffect(() => { 
     try {
       const GetAllCars =async () => { 
-        const Response = await fetch('http://localhost:4242/vehicles', {
+        const Response = await fetch('http://localhost:4242/vehicles/allstolencars', {
           methods: 'GET',
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`
           }
         })
-        const AllCars = await Response.json()
+        const AllStolenCars = await Response.json()
         setLoad(1)
-        setCarsData(AllCars)
-        console.log('all car data from approve car is: ', AllCars)
+        setCarsData(AllStolenCars)
+        console.log('all Stolen car is: ', AllStolenCars)
       }
       GetAllCars()
     }
     catch (e) {
-      console.log('gan not gett all vihcles')
+      console.log('gan not gett all Stolen car')
     }
   },[doRender])
   return (
     <>
-      <div className='title-admin-question'>
-            <h1 className=''>اضافه سياره </h1>
-          </div>
-      { loading === 1 ? allCarsData.map((car, index) => {
-        if (car.checked === 'waiting') {
-          // i do try and catch becouse some data is null and in check if contain or not get error..
+       <div className='title-admin-question'>
+        <h1 className=''> السيارات المسروقه</h1>
+        </div>
+      {loading === 1 ? allCarsData.vehicles.length === 0 ? <p className='notfound'>لا يوجد سيارات مسروقه</p>
+        : allCarsData.vehicles.map((car, index) => {
           try { 
                if (searchWord === '' || car.license.includes(searchWord) || car.vehicle_id.includes(searchWord) || car.model.includes(searchWord)) {
                  return (
-                   <MenueList
+                   <StolenMenueList
                      key={index}
                      number={index}
                      nationalID={car.license}
@@ -57,9 +56,8 @@ export default function ApproveCar({searchWord}) {
         }
           }
           catch (e) {
-            console.log('in all waiting car this not error but data is null')
+            console.log('not found any stolen car..')
           }
-      }
       return null;
     }):<p style={{textAlign:'center',width:'100%'}}>Loading...</p>}
   </>

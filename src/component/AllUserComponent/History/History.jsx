@@ -27,18 +27,7 @@ export default function Payment_History({ notify }) {
       console.log('can not get user transactions..')
     }
   }, [])
-//   const check = () => {
-//   const hasPaidTransaction = DataTransactions.transactions.some(
-//     (item) => item.payment_status !== 'paid'
-//   );
-
-//   if (hasPaidTransaction) {
-//     return 1;
-//   } else {
-//     return 0;
-//   }
-// }
-
+  
     return (
       <div className='font color-body'>
         <Container >
@@ -60,7 +49,6 @@ export default function Payment_History({ notify }) {
                   </thead>
                  <tbody>
                       {is_loading === 1 ? (
-                        // {/* <h1 className="transaction_notFound"> لم تقم بدفع اي فواتير حتي الان </h1> */}
                         DataTransactions.transactions.map((element, index) => {
                           if (element.payment_status !== 'notpaid' || element.is_reported === 'approved') {
                            return (
@@ -79,7 +67,7 @@ export default function Payment_History({ notify }) {
                         })
                       ) : (
                         <tr>
-                          <td colSpan="5" className="transaction_notFound">لم تقم بدفع أي فواتير حتى الآن</td>
+                          <td colSpan="5" className="transaction_notFound_History">لم تقم بدفع أي فواتير حتى الآن</td>
                         </tr>
                       )}
 </tbody>

@@ -28,26 +28,30 @@ export default function AnswerReport(searchWord) {
     }
   },[callRender])
   return (
-   <div className='AllAnserReport'>
-  {loading === 1 ? alTransaction.map((item, index) => {
-    if (item.is_reported === 'waiting') {
-      if(searchWord.searchWord === ''|| item.vehicle.includes(searchWord.searchWord)||item.adjustment_time.includes(searchWord.searchWord)||item.adjustment_date.includes(searchWord.searchWord)||item.place.includes(searchWord.searchWord))
-        return <CardReport
-          transactionID={item.transaction_id}
-          time={item.adjustment_time}
-          date={item.adjustment_date}
-          address={item.place}
-          carId={item.vehicle}
-          key={index} number={index}
-          render={setCallRender}
-        />;
-      else
-        return null
+    <>
+        <div className='title-admin-question'>
+            <h1 className=''>جميع التظلمات علي الفواتير</h1>
+          </div>
+      <div className='AllAnserReport'>
+      {loading === 1 ? alTransaction.map((item, index) => {
+        if (item.is_reported === 'waiting') {
+          if(searchWord.searchWord === ''|| item.vehicle.includes(searchWord.searchWord)||item.adjustment_time.includes(searchWord.searchWord)||item.adjustment_date.includes(searchWord.searchWord)||item.place.includes(searchWord.searchWord))
+            return <CardReport
+              transactionID={item.transaction_id}
+              time={item.adjustment_time}
+              date={item.adjustment_date}
+              address={item.place}
+              carId={item.vehicle}
+              key={index} number={index}
+              render={setCallRender}
+            />;
+          else
+            return null
 
-    }
-    return null; 
-  }) : <p>is loading...</p>}
-</div>
-
+        }
+        return null; 
+      }) : <p>is loading...</p>}
+    </div>
+</>
   )
 }

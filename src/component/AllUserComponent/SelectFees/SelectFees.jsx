@@ -85,7 +85,7 @@ return (
         <Container >
           <Row className='justify-content-center mt-5'>
             <Col className='py-3 mt-5 text-center' sm='2'>
-            <p style={{borderBottom:'2px solid teal', paddingBottom:'1rem'}}>لديك { is_loading ===1?DataTransactions.transactions.length:<p>..جاري التحميل</p>} فواتير</p>
+            {/* <p style={{borderBottom:'2px solid teal', paddingBottom:'1rem'}}>لديك { is_loading ===1?DataTransactions.transactions.length:<p>..جاري التحميل</p>} فواتير</p> */}
             </Col>
         </Row>
           <Row className='justify-content-center' >

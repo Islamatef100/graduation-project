@@ -28,6 +28,17 @@ justify-content: space-between;
     margin: 10px;
    
 }
+.title-admin-question {
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
+    margin-top: 0;
+    width: fit-content;
+    flex-direction: row;
+    text-align: center;
+    padding-top: 30px;
+    border-bottom: 3px solid teal;
+}
 .section-btns{
     width: 100%;
     display: flex;

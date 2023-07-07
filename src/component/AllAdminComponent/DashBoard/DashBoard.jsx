@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import GetAllUser from '../AllUser/GetAllUser'
 import ApproveCar from '../ApproveCar/ApproveCar'
 import AnswerReport from '../AnswerReport/AnswerReport'
+import StolenCarMain from '../AllStolenCar/StolenCarMain'
 import { Button, Form } from 'react-bootstrap'
 import Animation from '../../SharedComponent/Animation/Animation'
 //import Animation from '../../SharedComponent/Animation'
@@ -18,12 +19,14 @@ export default function DashBoard() {
                  <div className='Allmenue'>
                  <div onClick={()=>setWhichAppear(1)}>جمبع المستخدمين</div>
                  <div onClick={()=>setWhichAppear(2)}>مراجعه اضافه السيارات</div>
-                 <div onClick={()=>setWhichAppear(3)}>مراجعه التظلمات</div>
+                <div onClick={() => setWhichAppear(3)}>مراجعه التظلمات</div>
+                <div onClick={() => setWhichAppear(4)}> السيارات المسروقه</div>
+                    
             </div>
             </div>
             <div className='SelectedwhenUsMobile' >
                  <div className='Selected-component'>
-                {whichAppear === 1 ||whichAppear === 2||whichAppear===3 ?
+                {whichAppear === 1 ||whichAppear === 2||whichAppear===3 ||whichAppear===4 ?
                 <Form className="d-flex search-form">
                     <Form.Control
                         type="search"
@@ -37,7 +40,8 @@ export default function DashBoard() {
                     {whichAppear === 0 ? <div style={{width:'80vw',textAlign:'center'}}><Animation /></div>:
                     whichAppear === 1 ?<GetAllUser searchWord={searchWord} />
                     : whichAppear === 2 ? <ApproveCar searchWord={searchWord} />
-                    :whichAppear === 3 ? <AnswerReport searchWord={searchWord} />
+                    : whichAppear === 3 ? <AnswerReport searchWord={searchWord} />
+                    : whichAppear === 4 ? <StolenCarMain searchWord={searchWord} />
                     : null}
              </div>
             </div>
